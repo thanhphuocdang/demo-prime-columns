@@ -1,31 +1,57 @@
 <div class="card">
-	<h5>Horizontal</h5>
-	<p-splitter [style]="{'height': '300px', 'back': ''}" styleClass="p-mb-5">
-		<ng-template pTemplate>
-			<div class="p-col p-d-flex p-ai-center p-jc-center">
-				Panel 1
-			</div>
-		</ng-template>
-		<ng-template pTemplate>
-			<div class="p-col p-d-flex p-ai-center p-jc-center">
-				Panel 2
-			</div>
-		</ng-template>
-	</p-splitter>
+  <h5>Horizontal</h5>
+  <p-splitter [style]="{ height: '300px' }" #plit [panelSizes]="ps">
+    <ng-template pTemplate>
+      <div class="p-col p-c-flex p-ai-left p-jc-left">
+        <h6>Notification Header</h6>
+        <hr />
+        <ul>
+          <li>ITEM 001</li>
+          <li>ITsEM 001</li>
+          <li>ITEM 001</li>
+          <li>ITEM 001</li>
+        </ul>
+        <br />
+        <br />
+        <br />
+        <hr />
+        <div>
+          <button>Button1</button>
+          <button>Button2</button>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template pTemplate>
+      <div class="p-col p-d-flex p-ai-center p-jc-center">
+        <button (click)="changeT()">Notification content</button>
+      </div>
+    </ng-template>
+    <ng-template pTemplate>
+      <div *ngIf="isTh" class="p-col p-d-flex p-ai-center p-jc-center">
+        <p>Details</p>
+        <br />
+        <hr />
+        <p>Details</p>
+        <br />
+        <p>Details</p>
+        <p>Details</p>
+      </div>
+    </ng-template>
+  </p-splitter>
 </div>
 
-<div class="card">
-	<h5>Vertical</h5>
-	<p-splitter [style]="{'height': '300px'}" styleClass="p-mb-5" layout="vertical">
-		<ng-template pTemplate>
-			<div class="p-col p-d-flex p-ai-center p-jc-center">
-				Panel 1
-			</div>
-		</ng-template>
-		<ng-template pTemplate>
-			<div class="p-col p-d-flex p-ai-center p-jc-center">
-				Panel 2
-			</div>
-		</ng-template>
-	</p-splitter>
-</div>
+<!-- <div class="card">
+  <h5>Vertical</h5>
+  <p-splitter
+    [style]="{ height: '300px' }"
+    styleClass="p-mb-5"
+    layout="vertical"
+  >
+    <ng-template pTemplate>
+      <div class="p-col p-d-flex p-ai-center p-jc-center">Panel 1</div>
+    </ng-template>
+    <ng-template pTemplate>
+      <div class="p-col p-d-flex p-ai-center p-jc-center">Panel 2</div>
+    </ng-template>
+  </p-splitter>
+</div> -->
